@@ -4,13 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const NavBar = () => {
-    const [user, setUser] = useContext(UserContext);
+    const [users, setUsers] = useContext(UserContext);
     const navigate = useNavigate();
 
     const handleGoogleSignOut = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
-            setUser({})
+            setUsers({})
             navigate('/home')
         }).catch((error) => {
             // An error happened.
@@ -37,7 +37,7 @@ const NavBar = () => {
 
                             <li className="nav-item ms-5">
                                 {
-                                    user.email ? <button className='btn btn-success' onClick={handleGoogleSignOut} >LOG Out</button> :
+                                    users.email ? <button className='btn btn-success' onClick={handleGoogleSignOut} >LOG Out</button> :
                                         <Link to='/login'><button className='btn btn-success'>LOG IN</button></Link>
                                 }
                             </li>
@@ -47,10 +47,10 @@ const NavBar = () => {
                     </div>
 
                     {
-                        user.email &&
+                        users.email &&
                         <div className="d-flex me-4">
-                            <img className="ms-4" src={user.image} style={{height:'60px'}} alt="" />  
-                            <h4 className="ms-2 mt-2">Welcome,{user.name}</h4>
+                            <img className="ms-4" src={users.image} style={{height:'60px'}} alt="" />  
+                            <h4 className="ms-2 mt-2">Welcome,{users.name}</h4>
                             
                         </div>
                     }

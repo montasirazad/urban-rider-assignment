@@ -1,9 +1,13 @@
 import React from 'react';
+import '../../App'
+import RideChoice from '../RideChoice/RideChoice';
 
 const Home = () => {
     return (
-        <div>
-           <h1>THis is home</h1>
+        <div className='App'>
+            
+            <RideChoice />
+
         </div>
     );
 };
