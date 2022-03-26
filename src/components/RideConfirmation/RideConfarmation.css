@@ -1,0 +1,17 @@
+ .rideConfirm-div{
+     display: flex;
+      
+     
+       
+      
+ }
+
+.confirmation{
+     width: 50%;
+}
+ 
+  .confirm-btn{
+      width: 400px;
+      margin-left: 50px;
+      margin-top: 200px;
+  }

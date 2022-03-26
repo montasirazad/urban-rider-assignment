@@ -7,6 +7,7 @@ import LogIn from './components/LogIn/LogIn';
 import NavBar from './components/NavBar/NavBar';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import RideConfirmation from './components/RideConfirmation/RideConfirmation';
+import RideIsComing from './components/RideIsComing/RideIsComing';
 
 export const UserContext = createContext();
 
@@ -34,6 +35,7 @@ function App() {
         </PrivateRoute>} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<LogIn />} />
+        <Route path='/ride/coming' element={<RideIsComing />} />
 
 
       </Routes>

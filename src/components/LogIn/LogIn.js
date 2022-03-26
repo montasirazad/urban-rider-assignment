@@ -39,7 +39,7 @@ const LogIn = () => {
                 const token = credential.accessToken;
                 const user = result.user;
                 const { displayName, email, photoURL } = user;
-                console.log(user);
+                // console.log(user);
                 const loggedInUser = {
                     name: displayName,
                     email: email,
@@ -98,6 +98,7 @@ const LogIn = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorMessage)
 
             });
     }
@@ -125,6 +126,7 @@ const LogIn = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorMessage)
                 console.log(errorMessage);
 
             });
@@ -198,7 +200,9 @@ const LogIn = () => {
                         <button type="submit" className="btn btn-primary">{checked ? 'Log In' : 'Register'}</button>
 
                     </form>
-
+                    {
+                        error && <h4 className='text-danger bg-white mt-3'>{error}</h4>
+                    }
                 </div>
             }
         </div>
